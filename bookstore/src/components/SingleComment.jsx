@@ -1,26 +1,26 @@
-import { Button, ListGroup } from 'react-bootstrap'
+import { Button, ListGroup } from "react-bootstrap";
 
 const deleteComment = async (asin) => {
   try {
     let response = await fetch(
-      'https://striveschool-api.herokuapp.com/api/comments/' + asin,
+      "https://striveschool-api.herokuapp.com/api/comments/" + asin,
       {
-        method: 'DELETE',
+        method: "DELETE",
         headers: {
           Authorization:
-            'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI3OWY5NTgxNmI1YjAwMTU5NDA3NDAiLCJpYXQiOjE2MjI2NDY2NzcsImV4cCI6MTYyMzg1NjI3N30.y-rBwB5WAQOWBvWrLlAgTQUrbGulxd2M6cWH3VLyGLw',
+            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzdmNmRhMWQ4MzkzNTAwMTVlOGM0YjMiLCJpYXQiOjE2NjkyOTU1MjEsImV4cCI6MTY3MDUwNTEyMX0.O07X0AO6LDCV-aK_i7jNi5hS15ebCuwYvCVl6Y1I-Qo",
         },
       }
-    )
+    );
     if (response.ok) {
-      alert('comment deleted!')
+      alert("comment deleted!");
     } else {
-      alert('comment NOT deleted!')
+      alert("comment NOT deleted!");
     }
   } catch (error) {
-    alert('comment NOT deleted!')
+    alert("comment NOT deleted!");
   }
-}
+};
 
 const SingleComment = ({ comment }) => (
   <ListGroup.Item>
@@ -33,6 +33,6 @@ const SingleComment = ({ comment }) => (
       D
     </Button>
   </ListGroup.Item>
-)
+);
 
-export default SingleComment
+export default SingleComment;
